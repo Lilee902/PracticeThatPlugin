@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.support.v7.app.AppCompatActivity;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -12,7 +11,7 @@ import java.lang.reflect.Method;
 import dalvik.system.DexClassLoader;
 
 public class BaseHostActivity extends Activity {
-    
+
     private AssetManager mAssetManager;
     private Resources mResources;
     private Resources.Theme mTheme;
