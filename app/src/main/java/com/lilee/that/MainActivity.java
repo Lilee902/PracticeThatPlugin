@@ -1,13 +1,31 @@
 package com.lilee.that;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.lilee.pluginlib.AppConstants;
+import com.lilee.that.base.BaseActivity;
+
+public class MainActivity extends BaseActivity {
+
+    private Button btnPluginA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnPluginA = findViewById(R.id.btn_pluginA);
+        btnPluginA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppConstants.PROXY_VIEW_ACTION);
+                intent.putExtra(AppConstants.EXTRA_DEX_PATH, mPluginItems.get(PLUGIN_A_NAME).pluginPath);
+                //com.lilee.plugin.DefaultActivity
+                intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_A_NAME).packageInfo.packageName + ".DefaultActivity");
+                startActivity(intent);
+            }
+        });
     }
 }

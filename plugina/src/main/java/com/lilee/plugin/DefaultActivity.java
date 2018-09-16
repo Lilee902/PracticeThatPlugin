@@ -1,13 +1,17 @@
 package com.lilee.plugin;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DefaultActivity extends AppCompatActivity {
+import com.lilee.pluginlib.PluginBaseActivity;
+
+public class DefaultActivity extends PluginBaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_default);
     }
+
 }
