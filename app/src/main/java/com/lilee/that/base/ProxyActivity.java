@@ -10,7 +10,7 @@ import com.lilee.pluginlib.IRemoteActivity;
 
 import java.lang.reflect.Constructor;
 
-public class ProxyActivity extends BaseHostActivity {
+public class ProxyActivity extends BaseProxyActivity {
 
     private static final String TAG = "liTag";
     //remote activity class path
@@ -43,7 +43,7 @@ public class ProxyActivity extends BaseHostActivity {
             mRemoteActivity = (IRemoteActivity) newInstance;
             mRemoteActivity.setProxy(this, mDexPath);
 
-            mRemoteActivity.onCreate(new Bundle());
+            mRemoteActivity.onCreate(savedInstanceState);
 
         } catch (Exception e) {
             e.printStackTrace();

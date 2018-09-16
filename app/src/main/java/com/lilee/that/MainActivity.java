@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.lilee.pluginlib.AppConstants;
-import com.lilee.that.base.BaseActivity;
+import com.lilee.that.base.BaseHostActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseHostActivity {
 
     private Button btnPluginA;
     private Button btnPluginB;
