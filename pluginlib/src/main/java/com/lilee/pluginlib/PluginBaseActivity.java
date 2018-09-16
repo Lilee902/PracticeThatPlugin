@@ -23,6 +23,21 @@ public class PluginBaseActivity extends Activity implements IRemoteActivity{
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+
+    }
+
+    @Override
+    public void onNewIntent(Intent intent) {
+
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+
+    }
+
+    @Override
     public void onStart() {
 
     }

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.WindowManager;
 
 import com.lilee.pluginlib.AppConstants;
 import com.lilee.pluginlib.IRemoteActivity;
@@ -91,5 +93,35 @@ public class ProxyActivity extends BaseProxyActivity {
     protected void onDestroy() {
         super.onDestroy();
         mRemoteActivity.onDestroy();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mRemoteActivity.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        mRemoteActivity.onNewIntent(intent);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mRemoteActivity.onRestoreInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onWindowAttributesChanged(WindowManager.LayoutParams params) {
+        super.onWindowAttributesChanged(params);
+        mRemoteActivity.onWindowAttributesChanged(params);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        mRemoteActivity.onWindowFocusChanged(hasFocus);
     }
 }

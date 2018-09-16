@@ -7,6 +7,7 @@ import android.widget.Button;
 
 import com.lilee.pluginlib.AppConstants;
 import com.lilee.that.base.BaseHostActivity;
+import com.lilee.that.base.ProxyService;
 
 public class MainActivity extends BaseHostActivity {
 
@@ -38,6 +39,30 @@ public class MainActivity extends BaseHostActivity {
                 //com.lilee.pluginb.MainActivity
                 intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_B_NAME).packageInfo.packageName + ".MainActivity");
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.btn_startBService).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, ProxyService.class);
+                intent.putExtra(AppConstants.EXTRA_DEX_PATH, mPluginItems.get(PLUGIN_B_NAME).pluginPath);
+                //com.lilee.pluginb.TestService
+                intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_B_NAME).packageInfo.packageName + ".TestService");
+                startService(intent);
+            }
+        });
+
+        findViewById(R.id.btn_stopBService).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, ProxyService.class);
+                intent.putExtra(AppConstants.EXTRA_DEX_PATH, mPluginItems.get(PLUGIN_B_NAME).pluginPath);
+                //com.lilee.pluginb.TestService
+                intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_B_NAME).packageInfo.packageName + ".TestService");
+                stopService(intent);
             }
         });
     }
