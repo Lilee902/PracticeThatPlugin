@@ -54,7 +54,7 @@ public class MainActivity extends BaseHostActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, ProxyService.class);
+                intent.setClass(MainActivity.this, ProxyService1.class);
                 intent.putExtra(AppConstants.EXTRA_DEX_PATH, mPluginItems.get(PLUGIN_B_NAME).pluginPath);
                 //com.lilee.pluginb.TestService
                 intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_B_NAME).packageInfo.packageName + ".TestService");
@@ -66,7 +66,7 @@ public class MainActivity extends BaseHostActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, ProxyService.class);
+                intent.setClass(MainActivity.this, ProxyService1.class);
                 intent.putExtra(AppConstants.EXTRA_DEX_PATH, mPluginItems.get(PLUGIN_B_NAME).pluginPath);
                 //com.lilee.pluginb.TestService
                 intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_B_NAME).packageInfo.packageName + ".TestService");
@@ -79,7 +79,7 @@ public class MainActivity extends BaseHostActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, ProxyService.class);
+                intent.setClass(MainActivity.this, ProxyService2.class);
                 intent.putExtra(AppConstants.EXTRA_DEX_PATH, mPluginItems.get(PLUGIN_B_NAME).pluginPath);
                 //com.lilee.pluginb.TestService
                 intent.putExtra(AppConstants.EXTRA_CLASS, mPluginItems.get(PLUGIN_B_NAME).packageInfo.packageName + ".TestBindService");

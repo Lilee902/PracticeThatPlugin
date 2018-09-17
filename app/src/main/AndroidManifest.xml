@@ -16,16 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".base.ProxyActivity"
+        <activity
+            android:name=".base.ProxyActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="com.lilee.that.VIEW"/>
+                <action android:name="com.lilee.that.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <service android:name=".base.ProxyService">
-        </service>
+        <service android:name=".ProxyService1" />
+        <service android:name=".ProxyService2" />
+
     </application>
 
 </manifest>
