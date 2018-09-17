@@ -10,6 +10,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".TestService"/>
+
+        <service android:name=".TestBindService"/>
     </application>
 
 </manifest>

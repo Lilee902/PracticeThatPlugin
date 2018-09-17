@@ -2,6 +2,7 @@ package com.lilee.pluginb;
 
 import android.content.Intent;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.lilee.pluginlib.PluginBaseService;
 
@@ -16,6 +17,9 @@ public class TestService extends PluginBaseService{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.v(TAG,"onStartCommand");
+        String name = Thread.currentThread().getName();
+        Log.v(TAG,"name : " + name);
+        Toast.makeText(this,"name : " + name , Toast.LENGTH_SHORT).show();
         return super.onStartCommand(intent, flags, startId);
     }
 
