@@ -19,7 +19,7 @@ public class TestService extends PluginBaseService{
         Log.v(TAG,"onStartCommand");
         String name = Thread.currentThread().getName();
         Log.v(TAG,"name : " + name);
-        Toast.makeText(this,"name : " + name , Toast.LENGTH_SHORT).show();
+        Toast.makeText(getProxyService(),"name : " + name , Toast.LENGTH_SHORT).show();
         return super.onStartCommand(intent, flags, startId);
     }
 

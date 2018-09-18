@@ -13,6 +13,10 @@ public class PluginBaseService extends Service implements IRemoteService{
     private Service proxyService;
     private String dexPath;
 
+    public Service getProxyService() {
+        return proxyService;
+    }
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
