@@ -28,6 +28,14 @@
         <service android:name=".ProxyService1" />
         <service android:name=".ProxyService2" />
 
+        <receiver
+            android:name=".base.ProxyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.lilee.that.BROAD_CAST" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

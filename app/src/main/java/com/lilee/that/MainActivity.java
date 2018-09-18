@@ -93,6 +93,28 @@ public class MainActivity extends BaseHostActivity {
                 unbindService(conn);
             }
         });
+
+        findViewById(R.id.btn_sendBroadCast).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppConstants.PROXY_BROAD_CAST_ACTION);
+                intent.putExtra(AppConstants.EXTRA_PLUGIN_NAME,PLUGIN_A_NAME);
+                intent.putExtra(AppConstants.EXTRA_CLASS,"com.lilee.plugin.APluginReceiver");
+                intent.putExtra("info","this is a message form hostApp");
+                sendBroadcast(intent);
+            }
+        });
+
+        findViewById(R.id.btn_sendBroadCastB).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppConstants.PROXY_BROAD_CAST_ACTION);
+                intent.putExtra(AppConstants.EXTRA_PLUGIN_NAME,PLUGIN_B_NAME);
+                intent.putExtra(AppConstants.EXTRA_CLASS,"com.lilee.pluginb.BPluginReceiver");
+                intent.putExtra("info","this is a message form hostApp");
+                sendBroadcast(intent);
+            }
+        });
     }
 
 
